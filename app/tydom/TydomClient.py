@@ -223,10 +223,9 @@ class TydomClient:
             pass
         try:
 
-            if zone_id is None:
+            if zone_id is None:+ str(value) +
                 cmd = "alarmCmd"
-                body = ('{"value":"' + str(value) +
-                        '","pwd":"' + str(self.alarm_pin) + '"}')
+                body = '[{"name":"alarmMode","validity":"upToDate","value":"' + str(value) + '"}]'
             else:
                 cmd = "zoneCmd"
                 body = (
